@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+ <style>
+   .pnlm-about-msg {
+   visibility: hidden;
+    a {
+        visibility: hidden;
+      }
+  }
+    #panorama {
+        width: 100%;
+        height: 100vh;
+    }
+    .pnlm-load-box {
+   z-index:-999;
+   opacity: 0;
+}
+
+  .custom-hotspot {
+        height: 50px;
+        width: 50px;
+        background: #f00;
+    }
+    div.custom-tooltip span {
+        visibility: hidden;
+        position: absolute;
+        border-radius: 3px;
+        background-color: #fff;
+        color: #000;
+        text-align: center;
+        max-width: 200px;
+        padding: 5px 10px;
+        margin-left: -220px;
+        cursor: default;
+    }
+    div.custom-tooltip:hover span{
+        visibility: visible;
+    }
+    div.custom-tooltip:hover span:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-width: 10px;
+        border-style: solid;
+        border-color: #fff transparent transparent transparent;
+        bottom: -20px;
+        left: -10px;
+        margin: 0 50%;
+    }
+    </style>
+</head>
+	
+
+<body>
+<div id="panorama"></div>
+<script>
+
+
+pannellum.viewer('panorama', {   
+    "default": {
+        "firstScene": "Image1",
+        // "author": "MohammadSalah",
+        "sceneFadeDuration": 1000
+
+
+
+ },
+
+    "scenes": {
+        "Image1": {
+            "title": "Image1",
+            "hfov": 110,
+            "pitch": -3,
+            "yaw": 117,
+            "type": "equirectangular",
+            "panorama": "./images/ik.jpg",  
+            "autoLoad":true ,
+
+            "hotSpots": [
+                {
+                    "pitch": -2.1,
+                    "yaw": -50,
+                    "type": "scene",
+                    "text": "Image2",
+                    "sceneId": "Image2"
+                }
+                
+
+            ]
+        },
+
+        "Image2": {
+            "title": "Image2",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "./images/2.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": -100,
+                    "type": "scene",
+                    "text": "Image3",
+                    "sceneId": "Image3",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+}
+
+                ]
+
+             
+               
+        },
+
+          "Image3": {
+            "title": "Image3",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "./images/3.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": -100,
+                    "type": "scene",
+                    "text": "Image4",
+                    "sceneId": "Image4",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+
+
+          "Image4": {
+            "title": "Image4",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "./images/4.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 130,
+                    "type": "scene",
+                    "text": "Image5",
+                    "sceneId": "Image5",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+
+          "Image5": {
+            "title": "Image5",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "./images/5.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 100,
+                    "type": "scene",
+                    "text": "Image6",
+                    "sceneId": "Image6",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+
+          "Image6": {
+            "title": "Image6",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "./images/6.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": -100,
+                    "type": "scene",
+                    "text": "Image7",
+                    "sceneId": "Image7",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+
+
+          "Image7": {
+            "title": "Image7",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "./images/7.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": -100,
+                    "type": "scene",
+                    "text": "Image8",
+                    "sceneId": "Image8",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+
+
+          "Image8": {
+            "title": "Image8",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "./images/8.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 120,
+                    "type": "scene",
+                    "text": "Image9",
+                    "sceneId": "Image9",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+
+         "Image9": {
+            "title": "Image9",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "./images/9.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "Image10",
+                    "sceneId": "Image10",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                } ,
+
+                  {
+                    "pitch": -0.6,
+                    "yaw": -200,
+                    "type": "scene",
+                    "text": "Image11",
+                    "sceneId": "Image11",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                } ,
+            ]
+        },
+          "Image10":{
+            "title": "Image10",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "./images/10.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": -100,
+                    "type": "scene",
+                    "text": "Image9",
+                    "sceneId": "Image9",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+
+        "Image11" : {
+            "title": "Image11",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "./images/11.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": -100,
+                    "type": "scene",
+                    "text": "Image12",
+                    "sceneId": "Image12",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                } ,
+
+                {
+                    "pitch": -0.6,
+                    "yaw": -160,
+                    "type": "scene",
+                    "text": "Image13",
+                    "sceneId": "Image13",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                } ,
+                 {
+                    "pitch": -0.6,
+                    "yaw": -185,
+                    "type": "scene",
+                    "text": "Image14",
+                    "sceneId": "Image14",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                } ,
+            ]
+        },
+
+        "Image12" : {
+            "title": "Image12",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "./images/12.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 100,
+                    "type": "scene",
+                    "text": "Image11",
+                    "sceneId": "Image11",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                } ,
+
+                 
+            ]
+        },
+          "Image13" : {
+            "title": "Image13",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "./images/13.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 140,
+                    "type": "scene",
+                    "text": "Image11",
+                    "sceneId": "Image11",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+
+        "Image14" : {
+            "title": "Image14",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "./images/14.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 185,
+                    "type": "scene",
+                    "text": "Image11",
+                    "sceneId": "Image11",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+
+         "Image15" : {
+            "title": "Image15",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "./images/15.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "Image14",
+                    "sceneId": "Image14",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+         "Image16" : {
+            "title": "Image16",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "./images/16.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "Image17",
+                    "sceneId": "Image17",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+
+         "Image17" : {
+            "title": "Image17",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "./images/17.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "Image18",
+                    "sceneId": "Image18",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+          "Image18" : {
+            "title": "Image18",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "./images/18.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "Image19",
+                    "sceneId": "Image19",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+
+         "Image19" : {
+            "title": "Image19",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "./images/18.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "Image20",
+                    "sceneId": "Image20",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+
+         "Image20" : {
+            "title": "Image20",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "./images/20.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "Image19",
+                    "sceneId": "Image19",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+    }
+});
+</script>
+</body>
+</html>
